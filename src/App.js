@@ -18,7 +18,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <div>{this.props.children}</div>
+      <div style={{ height: "100%", width: "100%" }}>{this.props.children}</div>
     </div>
   );
 }

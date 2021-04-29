@@ -1,15 +1,19 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import { Page } from "../../components/index";
 
 @withRouter
 class A extends Component {
-  goToPage = () => {};
+  goToPage = () => {
+    this.props.history.push("/b");
+  };
 
   render() {
     return (
-      <div>
+      <Page>
         A<div onClick={this.goToPage}>跳转到B</div>
-      </div>
+        <Link to="/b">跳转到B_Link</Link>
+      </Page>
     );
   }
 }
