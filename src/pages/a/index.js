@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
+@withRouter
 class A extends Component {
   goToPage = () => {};
 
