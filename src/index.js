@@ -1,21 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Provider } from "mobx-react";
 import "./index.css";
 import App from "./App";
+import store from "./store/index";
 import { A, B } from "./pages/index";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <Route path="/" component={App}>
-        <Route path="/" component={A} />
-        <Route path="/a" component={A} />
-        <Route path="/b" component={B} />
-      </Route>
-    </Router>
-  </React.StrictMode>,
+  // <Provider {...store}>
+  <Provider store={store}>
+    <React.StrictMode>
+      <Router>
+        <Route path="/" component={App}>
+          <Route path="/" component={A} />
+          <Route path="/a" component={A} />
+          <Route path="/b" component={B} />
+        </Route>
+      </Router>
+    </React.StrictMode>
+  </Provider>,
   document.getElementById("root")
 );
 
