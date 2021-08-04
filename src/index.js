@@ -9,8 +9,7 @@ import { A, B } from "./pages/index";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  // <Provider {...store}>
-  <Provider store={store}>
+  <Provider {...store}>
     <React.StrictMode>
       <Router>
         <Route path="/" component={App}>

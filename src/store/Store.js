@@ -1,14 +1,12 @@
-import { observable, action } from "mobx";
-import { LetterStore } from "./index";
+import { observable, action, makeObservable } from "mobx";
 
 class Store {
-//   constructor(stores) {
-//     // this.letterStore = new LetterStore(this);
-//     this.stores = stores;
-//   }
+  constructor(stores) {
+    this.stores = stores;
+    makeObservable(this);
+  }
 
-  @observable
-  name = "a";
+  @observable name = "a";
 
   @action
   setName(name) {
